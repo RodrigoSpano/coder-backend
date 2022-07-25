@@ -1,0 +1,32 @@
+[
+  {
+    "name":"mouse logitech",
+    "precio": 300,
+    "color":"black",
+    "id":1
+  },
+  {
+    "name":"mouse hyperX",
+    "precio": 150,
+    "color":"black",
+    "id":2
+  },
+  {
+    "name":"teclado redragon",
+    "precio": 200,
+    "color":"white",
+    "id":3
+  },
+  {
+    "name":"teclado nisuta",
+    "precio": 60,
+    "color":"rosa",
+    "id":4
+  },
+  {
+    "name":"monitor samsung",
+    "precio": 500,
+    "color":"white",
+    "id":5
+  }
+]
