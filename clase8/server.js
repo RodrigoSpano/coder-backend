@@ -16,11 +16,14 @@ routerProds.get('/', (req, res) => {
 routerProds.get('/:id', (req, res) => {
   const { id } = req.params
   let prod = products.find(el => el.id === Number(id))
-  console.log(prod)
-  res.json({
-    status:200,
-    product: prod
-  })
+  if(prod){
+    res.json({
+      status:200,
+      product: prod
+    })
+  } else {
+    console.log('producto no encontrado')
+  }
 })
 
 routerProds.post('/', (req, res) => {
