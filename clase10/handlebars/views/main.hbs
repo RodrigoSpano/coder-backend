@@ -1,0 +1,16 @@
+<a href="/">home</a>
+<a href="/productos">productos</a>
+<h1>Hola con Handlebars</h1>
+
+{{> form }}
+
+  {{#if exist }}
+    <ul>
+      {{#each products}}
+        <li> {{name}} - {{desc}} - ${{price}} </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+  {{#else}}
+    <h2>no hay productos</h2>
+  {{/else}}

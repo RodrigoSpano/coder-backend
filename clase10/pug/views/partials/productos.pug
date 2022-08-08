@@ -1,0 +1,6 @@
+html
+  a(href='/')='home'
+  h2='Listado de productos'
+  div 
+    each prod in products
+      p= prod.name + '-' + prod.desc + '-' + '$' + prod.price

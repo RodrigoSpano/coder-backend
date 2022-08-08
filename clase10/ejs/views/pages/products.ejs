@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/">home</a>
+  <h1>Lista de productos con EJS</h1>
+  <%- include('../partials/form.ejs') %>
+  <div>
+    <% if(products.length > 0){ %> 
+      <ul>
+        <% products.map(el => { %>
+          <li> <%= el.name %> - <%= el.desc %> - <%= el.price %> </li>
+        <% }) %>
+      </ul>
+    <% } else{ %>
+        <h2>No hay productos</h2>
+      <% } %>
+  
+  </div>
+</body>
+</html>
