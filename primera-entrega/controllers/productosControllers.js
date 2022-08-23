@@ -1,5 +1,3 @@
-import Productos from '../container/Products.js'
-
 let prodList = [
   {
     title:'termo Stanley',
@@ -45,8 +43,6 @@ export const postProduct = (req, res) => {
   const {isAdmin, title, description, price, timestamp, code, img, stock} = req.body
   const product = { title:title, description:description, price:price, timestamp:timestamp, code:code, img:img, stock:stock, id: prodList.length+1 }
   if(isAdmin){
-    const prod = new Productos('./container/prods.txt')
-    prod.save(product)
     prodList.push(product)
     res.json({
       status: 200,
