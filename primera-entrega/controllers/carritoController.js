@@ -77,7 +77,7 @@ export const deleteProd = (req, res) => {
     const del = cart.productos.filter(el => el.id !== Number(id_prod))
     res.json({
       status:200,
-      message: `producto de id${id_prod} eliminado`,
+      message: `producto de id ${id_prod} eliminado`,
       productos: del
     })
   } else {
