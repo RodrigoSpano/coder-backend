@@ -41,6 +41,7 @@ io.on('connection', socket => {
 
   socket.on('conn', async data => {
     await listenSelect()
+    await listenChat()
   })
 
   socket.on('new-prod', async (data) => {
@@ -57,10 +58,6 @@ io.on('connection', socket => {
     .then(res => socket.emit('lista-chat', res))
     console.log('chat loaded')
   }
-
-  socket.on('conn', async data => {
-    await listenChat()
-  })
 
   socket.on('new-msg', async data => {
     await messages.insertIntoTable(data)
