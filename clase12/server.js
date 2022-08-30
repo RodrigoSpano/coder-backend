@@ -3,6 +3,7 @@ import { Server as IoServer } from 'socket.io'
 import http from 'http'
 import {v4 as uuid} from 'uuid'
 import moment from 'moment'
+import 'dotenv/config'
 
 const app = express()
 
@@ -54,4 +55,5 @@ io.on('connection', socket => {
 
 })
 
-httpServer.listen(5000, () => console.log(`running on port ${httpServer.address().port}`))
+const PORT = process.env.PORT || 5000
+httpServer.listen(PORT, () => console.log(`running on port ${PORT}`))
