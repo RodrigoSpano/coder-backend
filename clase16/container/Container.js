@@ -16,8 +16,8 @@ class Contenedor {
     return resp;
   }
 
-  updateById(id, data){
-    updateOne(this.options, this.tableName, id, data)
+  async updateById(id, data){
+    await updateOne(this.options, this.tableName, id, data)
   }
 
   deleteAll(){
