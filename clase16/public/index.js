@@ -22,7 +22,7 @@ const prodRender = (data) => {
   div.innerHTML = html
 }
 
-socket.on('lista', async data => {
+socket.on('products-list', async data => {
   await prodRender(data)
   // console.log(data)
 })
@@ -33,20 +33,18 @@ const addMsg = () => {
   let from = d.getElementById('from').value
   let message = d.getElementById('text').value
   const chat = {from, message}
-
+  
   socket.emit('new-msg', chat)
   return false;
 }
 
 const msgRender = (data) => {
-  let div = d.getElementById('chat-list')
-  let html = data.map(el => `<li>${el.from}:  ${el.message} </li>`)
-  div.innerHTML = html
-}
+  let cont = d.getElementById('chat-list')
+  let html = data.map(el => `<p> ${el.from}: ${el.message} </p>`)
+  cont.innerHTML = html
+} 
 
-
-socket.on('lista-chat', async data => {
+socket.on('msg-list', async data => {
+  console.log(data)
   await msgRender(data)
-  
-  // console.log(data)
 })

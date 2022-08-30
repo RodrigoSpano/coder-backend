@@ -29,53 +29,40 @@ const messages = new Contenedor(SQliteOptions, 'messages')
 io.on('connection', socket => {
   console.log('connected')
 
-  // prods.deleteAll()
-  // messages.deleteAll()
-
-  //socket de productos
-  const listenSelect = async () => {
-    await prods.selectAll()
-    .then(res => socket.emit('lista', res))
-    console.log('data loaded')
-  }
+  //  prods.deleteAll()
+  //  messages.deleteAll()
 
   socket.on('conn', async data => {
-    await listenSelect()
-    await listenChat()
+    await prodList()
+    await chatList()
   })
 
-  socket.on('new-prod', async (data) => {
+  //socket de productos
+  const prodList = async () => {
+    let prod = await prods.selectAll()
+    io.sockets.emit('products-list', prod)
+  }
+
+  socket.on('new-prod', async data => {
+    console.log(data)
     await prods.insertIntoTable(data)
-    console.log('data saved')
-    await listenSelect()
-    
+    await prodList()
   })
-
-
-  //chat-mensajes
-  const listenChat = async () => {
-    await messages.selectAll()
-    .then(res => socket.emit('lista-chat', res))
-    console.log('chat loaded')
+  
+  const chatList = async () => {
+    let msgs = await messages.selectAll()
+    console.log(msgs)
+    io.sockets.emit('msg-list', msgs)
   }
 
   socket.on('new-msg', async data => {
     await messages.insertIntoTable(data)
-    console.log('msg saved')
-    await listenChat()
+    await chatList()
+    
   })
 
 })
 
-
-// no le des importancia a esto Fran, es otra opcion que me funciono
-// socket.on('new-prod', async data => {
-//   prods.insertIntoTable(data)
-//   return new Promise((res) => {
-//     prods.selectAll()
-//     .then(all => res(all))
-//   }).then(res => io.sockets.emit('prods_list', res))
-// })
 
 
 const PORT = process.env.PORT || 4000

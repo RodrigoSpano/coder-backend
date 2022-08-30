@@ -7,17 +7,13 @@ class Contenedor {
     this.tableName = tableName;
   }
 
-  insertIntoTable(data){
-    insertInto(this.options, this.tableName, data)
+  async insertIntoTable(data){
+    await insertInto(this.options, this.tableName, data)
   }
 
   async selectAll(){
     const resp = await selectAll(this.options, this.tableName)
     return resp;
-    // .then(res => {
-    //   console.log(res)
-    //   return res;
-    // })
   }
 
   updateById(id, data){
