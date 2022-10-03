@@ -1,16 +1,17 @@
-import { Router } from 'express';
-import passport from 'passport';
-import { getLogin, postLogin } from '../controllers/login-controllers.js';
+const Router = require('express').Router;
+const passport = require('passport');
+const { getLogin } = require('../controllers/loginController');
 
 const router = Router();
 
 router.get('/', getLogin);
 router.post(
   '/',
-  passport.authenticate('login', {
+  passport.authenticate('local-login', {
     successRedirect: '/',
     failureRedirect: '/login',
-  }),
-  postLogin
+    passReqToCallback: true,
+  })
 );
-export default router;
+
+module.exports = router;

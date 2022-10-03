@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-mongoose
-  .connect(process.env.URL_CONNECTION)
-  .then(() => console.log('database connected'));
+const uri = process.env.URL_CONNECTION;
+mongoose.connect(uri, () => console.log('db connnected'));

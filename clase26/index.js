@@ -1,14 +1,14 @@
-import express from 'express';
-import 'dotenv/config';
-import morgan from 'morgan';
-import cookieParser from 'cookie-parser';
-import session from 'express-session';
-import indexRoute from './routes/index.routes.js';
-import passport from 'passport';
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const session = require('express-session');
+const passport = require('passport');
 
-export const app = express();
+require('dotenv').config();
+require('./utils/passport.config');
 
-app.set('view engine', '.ejs');
+const indexRoute = require('./routes/index');
+
+const app = express();
 
 app.use(
   session({
@@ -20,12 +20,16 @@ app.use(
     },
   })
 );
-app.use(express.urlencoded({ extended: true }));
+
+app.set('view engine', '.ejs');
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SECRET));
-app.use(morgan('dev'));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(indexRoute);
+
+module.exports = app;
