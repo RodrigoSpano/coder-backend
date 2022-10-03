@@ -9,7 +9,7 @@ router.post(
   '/',
   passport.authenticate('local-login', {
     successRedirect: '/',
-    failureRedirect: '/login',
+    failureRedirect: '/login-error',
     passReqToCallback: true,
   })
 );

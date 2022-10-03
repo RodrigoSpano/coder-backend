@@ -4,7 +4,7 @@ const userExistMiddleware = async (req, res, next) => {
   const { email } = req.body;
   const findUser = await userModel.findOne({ email });
   if (!findUser) return next();
-  res.redirect('/signup');
+  res.redirect('/signup-error');
 };
 
 const authMiddleware = (req, res, next) => {

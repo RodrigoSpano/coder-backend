@@ -13,4 +13,12 @@ router.use('/login', loginRoute);
 router.use('/signup', signUpRoute);
 router.use('/logout', logoutRoute);
 
+//!error pages
+router.get('/signup-error', (req, res) => {
+  res.render('signuperror');
+});
+router.get('/login-error', (req, res) => {
+  res.render('loginError');
+});
+
 module.exports = router;
