@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 router.get('/', (req, res) => {
-  //todo falta mostrar los argumentos de entrada
+  const entrada = process.argv.slice(2);
   const SO = process.platform; // SO
   const version = process.version; // NODE VERSION
   const memory = process.memoryUsage(); //memoria
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   const proyectPath = process.cwd(); // path del proyecto
   const proccessId = process.pid; // process id
 
-  const arr = [SO, version, memory, execPath, proyectPath, proccessId];
+  const arr = [entrada, SO, version, memory, execPath, proyectPath, proccessId];
 
   res.status(200).json({ arr });
 });
