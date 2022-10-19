@@ -13,11 +13,15 @@ app.get('/info', (req, res) => {
   res.status(200).send(`num cpus: ${numcpus}`);
 });
 
+app.get('/api/randoms', (req, res) => {
+  res.send(200)
+})
+
 if (mode === 'cluster' && cluster.isPrimary) {
   console.log(port, mode);
 
   console.log(`Master ${process.pid} is running`);
-  for (let i = 0; i < numcpus; i++) {
+  for (let i = 0; i < numCPUs.cpus().length ; i++) {
     cluster.fork();
   }
   cluster.on('exit', (worker, code, signal) => {
@@ -25,6 +29,6 @@ if (mode === 'cluster' && cluster.isPrimary) {
   });
 } else {
   app.listen(port, () => console.log('running', port));
-
+  console.log(`port: ${port}, mode: ${mode}`)
   console.log(`Worker ${process.pid} started`);
 }
