@@ -1,0 +1,4 @@
+- node o nodemon index.js => se corre en el puerto 8080 en modo fork, si quiere cambiar de puerto y modo basta con escribirlos, 4040 cluster
+- forever start index.js
+- forever list
+- forever stop 0
