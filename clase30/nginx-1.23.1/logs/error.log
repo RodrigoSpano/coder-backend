@@ -1,0 +1,23 @@
+2022/07/23 20:21:50 [error] 16684#13972: *1 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/07/24 22:40:22 [emerg] 4012#4664: unexpected "}" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:16
+2022/07/24 23:04:25 [emerg] 8236#19076: "worker_processes" directive is duplicate in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:8
+2022/07/24 23:21:30 [emerg] 2120#7012: "worker_processes" directive is duplicate in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:8
+2022/07/24 23:25:47 [emerg] 19096#968: unexpected "}" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:16
+2022/07/24 23:27:57 [emerg] 15396#14820: unexpected "}" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:16
+2022/07/24 23:28:18 [emerg] 15248#11388: unknown directive "http://localhost:8081/api" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:15
+2022/07/24 23:29:01 [emerg] 10380#7304: unknown directive "http://localhost:8081/api/random" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:15
+2022/07/24 23:30:14 [emerg] 18264#17120: unknown directive "http://localhost:8081/random" in D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/conf/nginx.conf:15
+2022/07/24 23:32:03 [notice] 18104#14592: signal process started
+2022/07/24 23:32:03 [error] 18104#14592: OpenEvent("Global\ngx_reload_15396") failed (2: The system cannot find the file specified)
+2022/07/24 23:32:14 [notice] 8568#17968: signal process started
+2022/07/24 23:32:14 [error] 8568#17968: OpenEvent("Global\ngx_quit_15396") failed (2: The system cannot find the file specified)
+2022/07/24 23:32:38 [error] 17460#13736: *1 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/07/24 23:43:11 [error] 17460#13736: *4 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/random" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: , request: "GET /random HTTP/1.1", host: "localhost"
+2022/07/24 23:43:15 [error] 17460#13736: *4 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/random" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: , request: "GET /random HTTP/1.1", host: "localhost"
+2022/07/24 23:44:33 [error] 17460#13736: *6 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/random" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: , request: "GET /random HTTP/1.1", host: "localhost"
+2022/07/24 23:50:09 [notice] 18840#3116: signal process started
+2022/07/24 23:50:17 [notice] 16488#1524: signal process started
+2022/07/24 23:50:31 [error] 17460#13736: *9 CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/html/random" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: , request: "GET /random HTTP/1.1", host: "localhost"
+2022/07/24 23:52:49 [notice] 2036#9432: signal process started
+2022/07/24 23:53:21 [notice] 4208#19132: signal process started
+2022/07/24 23:53:21 [error] 4208#19132: CreateFile() "D:\Documentos Ema\CoderHouse\Curso_Backend\Desafios\Desafio-Clase-29-Proxy-Nginx\nginx-1.23.1/logs/nginx.pid" failed (2: The system cannot find the file specified)

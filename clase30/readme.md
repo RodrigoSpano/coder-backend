@@ -17,10 +17,3 @@
 
 - node index.js 8081 cluster
 - node index.js => para modo fork en 8080
-
-pm2 start index.js --name='sv3' --watch -i 4 -- 8082
-pm2 start index.js --name='sv4' --watch -i 4 -- 8083
-pm2 start index.js --name='sv5' --watch -i 4 -- 8084
-pm2 start index.js --name='sv6' --watch -i 4 -- 8085
-
-//lo limite a 4 xq tengo 12 cores jeje
