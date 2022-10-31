@@ -1,0 +1,60 @@
+Statistical profiling result from nobloq-v8.log, (19774 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  18328   92.7%          C:\WINDOWS\SYSTEM32\ntdll.dll
+   1442    7.3%          C:\Program Files\nodejs\node.exe
+      1    0.0%          C:\WINDOWS\System32\KERNELBASE.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.0%   33.3%  Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+      1    0.0%   33.3%  Function: ^emitBeforeScript node:internal/async_hooks:510:26
+      1    0.0%   33.3%  Function: ^checkInvalidHeaderChar node:_http_common:232:32
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      3    0.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      4    0.0%  133.3%  GC
+  19771  100.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  18328   92.7%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+   1442    7.3%  C:\Program Files\nodejs\node.exe
+   1386   96.1%    C:\Program Files\nodejs\node.exe
+   1270   91.6%      Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+   1262   99.4%        Function: ^<anonymous> file:///C:/dev/studies/backend-coder/clases/clase32/index.js:35:23
+   1262  100.0%          Function: ^handle C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\layer.js:86:49
+   1248   98.9%            Function: ^next C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\route.js:116:16
+     14    1.1%            LazyCompile: ~next C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\route.js:116:16
+     35    2.5%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+     35  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+     30   85.7%          Function: ^Socket._writeGeneric node:net:791:42
+     30  100.0%            Function: ^Socket._write node:net:828:35
+      3    8.6%          LazyCompile: *_write node:internal/streams/writable:283:16
+      3  100.0%            Function: ^Writable.write node:internal/streams/writable:333:36
+      2    5.7%          LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+      2  100.0%            Function: ^_write node:internal/streams/writable:283:16
+     27    1.9%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+     24   88.9%        LazyCompile: ~<anonymous> file:///C:/dev/studies/backend-coder/clases/clase32/index.js:35:23
+     21   87.5%          Function: ^handle C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\layer.js:86:49
+     21  100.0%            LazyCompile: ~next C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\route.js:116:16
+      3   12.5%          LazyCompile: ~handle C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\layer.js:86:49
+      3  100.0%            LazyCompile: ~next C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\route.js:116:16
+      3   11.1%        LazyCompile: ~<anonymous> file:///C:/dev/studies/backend-coder/clases/clase32/index.js:18:21
+      3  100.0%          LazyCompile: ~handle C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\layer.js:86:49
+      3  100.0%            LazyCompile: ~next C:\dev\studies\backend-coder\clases\clase32\node_modules\express\lib\router\route.js:116:16
+
