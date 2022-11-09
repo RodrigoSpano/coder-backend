@@ -1,9 +1,10 @@
 import {Router} from 'express' 
 import passport from 'passport';
-import {  postSignup } from '../../controllers/signup.controller.js';
+import {  postSignup } from '../../controllers/sessions/signup.controller.js';
 import { userExistsMiddleware } from '../../middleware/middlewares.js'
 const router = Router()
 
+router.get('/', (req,res) => res.render('signup'))
 router.post('/', userExistsMiddleware, postSignup)
 
 //! error al serializar into session

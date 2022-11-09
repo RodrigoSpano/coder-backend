@@ -1,0 +1,23 @@
+<h1>signup</h1>
+<form action="/auth/signup" method="POST" style="display:flex; flex-direction:column; width: 600px; gap:10px">
+  <input placeholder="email" type="email" name="email"/>
+  <input placeholder="password" type="password" name="password"/>
+  <input placeholder="name" type="text" name="name"/>
+  <input placeholder="address" type="text" name="address"/>
+  <input placeholder="years" type="number" name="years"/>
+  <div>
+    <select name="phoneArea">
+      <option value="+54">Argentina</option>
+      <option value="+55">Brazil</option>
+      <option value="+61">Australia</option>
+      <option value="+598">Uruguay</option>
+      <option value="+47">Norway</option>
+    </select>
+    <input style="width:500px ;" placeholder="phone" type="number" name="phone"/>
+  </div>
+
+  <input placeholder="avatar" type="text" name="avatar"/>
+  <button type="submit" >submit</button>
+</form>
+
+<a href="/auth/login">ya tienes cuenta? log in!</a>

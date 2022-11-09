@@ -3,12 +3,15 @@ import { authMiddleware } from '../middleware/middlewares.js';
 import loginRoute from './session/login.js'
 import signupRoute from './session/singup.js'
 import logoutRoute from './session/logout.js'
+import { getHome } from '../controllers/home.controller.js';
+import addCartRoute from './cart/addCart.js'
 
 const router = Router()
 
 router.use('/auth/login', loginRoute)
 router.use('/auth/signup', signupRoute)
 router.use('/auth/logout', logoutRoute)
-router.get('/', authMiddleware)
+router.use('/addcart', addCartRoute)
+router.get('/', authMiddleware, getHome)
 
 export default router;

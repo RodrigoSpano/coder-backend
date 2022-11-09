@@ -1,0 +1,28 @@
+<div style="display:flex; width:100%; height:100px; gap:20px">
+  <a href="/">home</a>
+  <a href="/account">account</a>
+  <a href="/cart">cart</a>
+  <a href="/auth/logout">logout</a>
+</div>
+
+
+<% if(prods.length > 0) { %>
+  <div style="display:flex; gap:40px;  ">
+    <% prods.map(el => { %>
+      <div style="width:300px; height:500px; border: 1px solid #09f">
+        <h2> <%= el.title %> </h2>
+        <p> $<%= el.price %> </p>
+        <p> <%= el.description %> </p>
+        <img style="height:250px; object-fit: contain; " src=<%= el.image %> />
+
+        <form action="/addcart" method="POST">
+          <button type="submit">add to cart</button>
+          <input type="text" name="id" value=<%= el._id %> />
+        </form>
+
+      </div>
+    <% }) %>
+  </div>
+<% } else{ %>
+    <h2>no hay productos</h2>
+    <% } %>

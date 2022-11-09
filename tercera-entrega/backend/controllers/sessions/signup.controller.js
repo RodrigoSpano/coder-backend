@@ -1,5 +1,5 @@
-import userModel from '../models/userModel.js'
-import { createHash } from '../utils/helpers.js'
+import userModel from '../../models/userModel.js'
+import { createHash } from '../../utils/helpers.js'
 
 export const postSignup = async (req, res) => {
   try{
