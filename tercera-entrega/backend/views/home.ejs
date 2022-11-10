@@ -21,10 +21,7 @@
         <p> <%= el.description %> </p>
         <img style="height:250px; object-fit: contain; " src=<%= el.image %> />
 
-        <form action="/addcart" method="POST">
-          <button type="submit">add to cart</button>
-          <input type="text" name="id" value=<%= el._id %> />
-        </form>
+          <button onclick="addToCart(el._id)" class="addToCart" > >add to cart</button>
 
       </div>
     <% }) %>
@@ -32,3 +29,9 @@
 <% } else{ %>
     <h2>no hay productos</h2>
     <% } %>
+
+    <%
+      const addToCart = async (id) => {
+        await fetch.post('localhost/addcart', {id})
+      }
+    %> 
