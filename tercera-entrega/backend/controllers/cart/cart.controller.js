@@ -16,12 +16,27 @@ export const postAddCart = async (req, res) => {
       price: findProd.price,
       image: findProd.image,
       category: findProd.category,
-      prodId: findProd._id
+      quantity: 1,
+      _id: findProd._id
     };
 
-    const addCart = new cartModel(findProd)
+    const addCart = new cartModel(prod)
     await addCart.save()
 
-    return res.status(200).json({cart: cartModel.find()})
+    res.redirect('/')
   } catch(err){console.log(err)}
+}
+
+export const getCart = async (req, res) => {
+  try{
+
+    const prods = await cartModel.find()
+    res.render('cart', {prods})
+
+  }catch(err){console.log(err)}
+}
+
+export const delCart = async (req, res) => {
+  await cartModel.deleteMany()
+  res.redirect('/cart')
 }

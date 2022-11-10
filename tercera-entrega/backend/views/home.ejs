@@ -5,12 +5,18 @@
   <a href="/auth/logout">logout</a>
 </div>
 
+<div style="display:flex; gap:10px; align-items:center">
+  <h1>Categories</h1>
+  <a href="/category/fantasy">Fantasy</a>
+  <a href="/category/romance">Romance</a>
+  <a href="/category/fiction">Fiction</a>
+</div>
 
 <% if(prods.length > 0) { %>
   <div style="display:flex; gap:40px;  ">
     <% prods.map(el => { %>
-      <div style="width:300px; height:500px; border: 1px solid #09f">
-        <h2> <%= el.title %> </h2>
+      <div style="width:300px; height:500px; border: 1px solid #09f; display:flex; flex-direction: column;align-items: center; ">
+        <h2 style="text-align:center ;"> <%= el.title %> </h2>
         <p> $<%= el.price %> </p>
         <p> <%= el.description %> </p>
         <img style="height:250px; object-fit: contain; " src=<%= el.image %> />

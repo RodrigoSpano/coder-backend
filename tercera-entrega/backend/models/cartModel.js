@@ -6,8 +6,11 @@ const cartSchema = new Schema({
     price: Number,
     image: String,
     Category: String,
-    prodId: String,
-  
+    quantity: Number,
+    // prodId: String,
+    _id: String
+}, {
+    _id: false
 });
 
 const cartModel = model('cart', cartSchema)
