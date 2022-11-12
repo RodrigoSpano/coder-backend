@@ -6,6 +6,6 @@ const router = Router();
 
 router.get('/', authMiddleware, getCart);
 router.get('/empty', authMiddleware, delCart);
-router.get('/buy', buyCart)
+router.get('/buy', authMiddleware, buyCart)
 
 export default router;
