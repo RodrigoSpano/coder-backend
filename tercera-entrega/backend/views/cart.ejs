@@ -15,12 +15,14 @@
         <img style="height:200px; object-fit: contain;" src=<%= el.image %> />
         <div>
           <h2> <%= el.title %> </h2>
-          <p> $<%= el.price %> </p>
+          <p> $<%= el.price %> - per unit </p>
           <p> cantidad: <%= el.quantity %> </p>
         </div>
       </div>
     <% }) %>
   </div>
+  <a href="/cart/buy">Buy cart</a>
 <% } else {%>
   <h1>no hay productos en el carrito</h1>
   <% } %>
+  

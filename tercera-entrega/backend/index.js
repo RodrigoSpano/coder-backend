@@ -7,6 +7,7 @@ import MongoStore from 'connect-mongo'
 import indexRoute from './routes/index.routes.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import fileUpload from 'express-fileupload'
 
 import './utils/passport.config.js'
 
@@ -36,6 +37,7 @@ app.use(express.urlencoded({ extended:true }))
 app.use(cookieParser(process.env.SECRET));
 app.use(morgan('dev'))
 app.use(cors())
+app.use(fileUpload())
 
 app.use(passport.initialize())
 app.use(passport.session())

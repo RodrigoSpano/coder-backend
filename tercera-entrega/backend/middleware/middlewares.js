@@ -15,9 +15,9 @@ export const userExistsMiddleware = async (req, res, next) => {
 
 export const cartProdExistsMiddleware = async (req, res, next ) => {
   const {id} = req.body
-  const prod = await cartModel.findById(id)
+  const prod = await cartModel.findOne({prodId: id})
   if(prod) {
-    await cartModel.updateOne({id}, {quantity: ++prod.quantity})
+    await cartModel.updateOne({prodId: id}, {quantity: ++prod.quantity})
     res.redirect('/')
   } else {
     return next()

@@ -21,7 +21,7 @@
         <p> <%= el.description %> </p>
         <img style="height:250px; object-fit: contain; " src=<%= el.image %> />
 
-          <button onclick="addToCart(el._id)" class="addToCart" > >add to cart</button>
+          <button onclick="addToCart(`<%= el._id %>`)" class="addToCart" > >add to cart</button>
 
       </div>
     <% }) %>
@@ -30,8 +30,20 @@
     <h2>no hay productos</h2>
     <% } %>
 
-    <%
+    <script>
+
       const addToCart = async (id) => {
-        await fetch.post('localhost/addcart', {id})
+        console.log(id)
+        const requestOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({id: id})
+        };
+        fetch('http://localhost:8080/addcart', requestOptions)
+          .then(response => console.log(response))
+          
       }
-    %> 
+      
+      </script>

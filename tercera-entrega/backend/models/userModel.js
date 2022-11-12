@@ -39,9 +39,7 @@ const userSchema = new Schema({
   },
   avatar: {
     type: String,
-    required: false,
-    default:
-      'https://www.ledgerinsights.com/wp-content/uploads/2021/12/adidas-nft-bored-ape-810x524.jpg',
+    required: true,
   },
   admin: {
     type: Boolean,

@@ -1,5 +1,5 @@
 <h1>signup</h1>
-<form action="/auth/signup" method="POST" style="display:flex; flex-direction:column; width: 600px; gap:10px">
+<form action="/auth/signup" method="POST" enctype="multipart/form-data" style="display:flex; flex-direction:column; width: 600px; gap:10px">
   <input placeholder="email" type="email" name="email"/>
   <input placeholder="password" type="password" name="password"/>
   <input placeholder="name" type="text" name="name"/>
@@ -16,7 +16,7 @@
     <input style="width:500px ;" placeholder="phone" type="number" name="phone"/>
   </div>
 
-  <input placeholder="avatar" type="text" name="avatar"/>
+  <input type="file" name="image"/>
   <button type="submit" >submit</button>
 </form>
 
