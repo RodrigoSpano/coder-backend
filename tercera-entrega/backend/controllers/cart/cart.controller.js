@@ -1,3 +1,4 @@
+import { logger } from '../../log4.js';
 import cartModel from '../../models/cartModel.js';
 import prodModel from '../../models/prodModel.js';
 import userModel from '../../models/userModel.js';
@@ -10,11 +11,10 @@ export const getAddCart = (req, res) => {
 
 export const postAddCart = async (req, res) => {
   const { id } = req.body;
-  console.log(id);
-
+  
   try {
     const findProd = await prodModel.findOne({ _id: id });
-    console.log(findProd);
+    logger.info(findProd);
 
     const cartProd = {
       quantity: 1,
@@ -27,7 +27,7 @@ export const postAddCart = async (req, res) => {
 
     res.redirect('/');
   } catch (err) {
-    console.log(err);
+    logger.warn(err);
   }
 };
 
@@ -52,7 +52,7 @@ export const getCart = async (req, res) => {
 
     res.render('cart', { prods });
   } catch (err) {
-    console.log(err);
+    logger.warn(err);
   }
 };
 
@@ -111,6 +111,6 @@ export const buyCart = async (req, res) => {
 
     res.render('success',{})
   } catch (err) {
-    console.log(err);
+    logger.warn(err);
   }
 };

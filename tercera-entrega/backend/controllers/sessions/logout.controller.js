@@ -1,3 +1,5 @@
+import { logger } from '../../log4.js';
+
 export const getLogout = async (req, res) => {
   try {
     req.session.destroy((err) => {
@@ -9,5 +11,5 @@ export const getLogout = async (req, res) => {
       }
       return res.status(200).redirect('/auth/login');
     });
-  }catch(err){console.log(err)}
+  }catch(err){logger.warn(err)}
 }

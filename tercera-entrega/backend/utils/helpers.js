@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt'
+import { logger } from '../log4.js'
 import { client } from './twilio.js'
 
 export const createHash = (password) => {
@@ -12,9 +13,9 @@ export const verifyPassword = (user, password) => {
 export const sendWsp = async (options) => {
   try {
     const message = await client.messages.create(options);
-    console.log(message);
+    logger.info(message);
   } catch (err) {
-    console.log(err);
+    logger.warn(err);
   }
 }
 

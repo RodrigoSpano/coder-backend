@@ -4,13 +4,14 @@ import { transporter } from '../../utils/nodemailes.js';
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { logger } from '../../log4.js';
 
 export const sendEmail = async (options) => {
   try {
     const info = await transporter.sendMail(options);
-    console.log(info);
+    logger.info(info);
   } catch (err) {
-    console.log(err);
+    logger.info(err);
   }
 };
 
@@ -50,6 +51,6 @@ export const postSignup = async (req, res) => {
 
     res.redirect('/auth/login');
   } catch (err) {
-    console.log(err);
+    logger.warn(err);
   }
 };
