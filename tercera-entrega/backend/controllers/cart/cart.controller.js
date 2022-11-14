@@ -105,7 +105,9 @@ export const buyCart = async (req, res) => {
     };
     sendWsp(options);
 
-    sendSMS( user)
+    sendSMS(user)
+
+    await cartModel.deleteMany()
 
     res.render('success',{})
   } catch (err) {
