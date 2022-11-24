@@ -1,10 +1,12 @@
 //capa de logica de negocio
 import { getDao } from '../factory/productsDaoFactory.js'
 import ProductosMongoDao from '../pers/DAOs/ProductsMongoDbDao.js' 
+import ProductosRepo from '../pers/repository/productosRepo.js'
 
 class ProductosApi{
   constructor(){
     this.productosDao = getDao()
+    // this.productosDao = new ProductosRepo()
   }
 
   async getAll(){

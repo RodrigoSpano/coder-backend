@@ -37,7 +37,7 @@ export const updateProd = async (req, res) => {
     const data = req.body;
 
     const updatedProd = await apiProds.updateProd(id, data);
-    res.send(200).json({ prod: updatedProd });
+    res.status(200).json({ prod: updatedProd });
   } catch (error) {
     res.status(500).json({ success: false, err });
   }
