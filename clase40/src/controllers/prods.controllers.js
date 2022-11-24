@@ -23,7 +23,7 @@ export const getOne = async (req, res) => {
 
 export const addProd = async (req, res) => {
   try {
-    const {data} = req.body;
+    const data = req.body;
     const newProd = await apiProds.addProd(data);
     res.status(200).json({ prod: newProd });
   } catch (error) {
