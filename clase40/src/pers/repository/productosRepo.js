@@ -9,30 +9,30 @@ class ProductosRepo{
 
   static async getAll(){
     const dto = await this.dao.getAll()
-    return dto.map(el => new prodsDto(el))
+    return dto.map(el => prodsDto(el))
   }
   
   static async getOne(_id){
     const dto = await this.dao.getOne(_id)
-    return new prodsDto(dto)
+    return prodsDto(dto)
   }
 
   static async addProd(data){
     const dto = await this.dao.addProd(data)
-    return new prodsDto(dto)
+    return prodsDto(dto)
   }
 
   static async updateProd(_id, data){
     const dto = await this.dao.updateProd(_id, data)
-    return new prodsDto(dto)
+    return prodsDto(dto)
   }
   
   static async deleteOne(_id){
-    const dto = await this.dao.deleteOne(_id)
+    await this.dao.deleteOne(_id)
   }
 
   static async deleteAll(){
-    const dto = await this.dao.deleteAll()
+    await this.dao.deleteAll()
   }
 }
 

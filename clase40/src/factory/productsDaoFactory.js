@@ -4,8 +4,8 @@ import DbClient from './dbClient.js';
 
 
 let dao;
-
-switch (process.env.PERSISTENCIA) {
+const PERSISTENCIA = process.env.PERSISTENCIA
+switch (PERSISTENCIA) {
   case 'MONGO':
     const dbClient = new DbClient();
     await dbClient.connect();

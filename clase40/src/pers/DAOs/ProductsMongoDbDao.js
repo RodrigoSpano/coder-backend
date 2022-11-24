@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 import Prods from '../../models/ProdModel.js' 
+// import ProductosRepo from '../repository/productosRepo.js'; 
+import prodsDto from '../DTOs/ProdsDto.js'
 
 class ProductsMongoDbDao {
   constructor(){
@@ -13,7 +15,7 @@ class ProductsMongoDbDao {
     getAll = async () => {
       try {
       const allProds = await Prods.find({});
-      return allProds;
+      return prodsDto(allProds);
       } catch (error) {
         console.log(error)
       }
@@ -22,7 +24,7 @@ class ProductsMongoDbDao {
     getOne = async (_id) =>{
       try {
         const findProd = await Prods.findById({_id})
-        return findProd
+        return prodsDto(findProd)
       } catch (error) {
         console.log(error)
       }
@@ -32,7 +34,7 @@ class ProductsMongoDbDao {
       try {
         const newProd = new Prods(data)
         await newProd.save()
-        return newProd
+        return prodsDto(newProd)
       } catch (error) {
         console.log(error)
       }
@@ -42,7 +44,7 @@ class ProductsMongoDbDao {
       try {
         const prod = await Prods.findByIdAndUpdate({_id}, {data})
         await prod.save()
-        return prod;
+        return prodsDto(prod);
       } catch (error) {
         console.log(error)
       }
